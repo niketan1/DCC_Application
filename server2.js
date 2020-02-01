@@ -3,7 +3,7 @@ var app = express();
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const fs = require('fs');
-var nodemailer = require('nodemailer');
+//var nodemailer = require('nodemailer');
 let db = new sqlite3.Database('studentdb');
 
 app.use(express.static('static'));
@@ -33,7 +33,7 @@ app.get('/post_register',function(req,res){
 	  });
 	});
 	
-	var transporter = nodemailer.createTransport({
+	/*var transporter = nodemailer.createTransport({
 	  service: 'gmail',
 	  auth: {
 		user: 'klvijeth1999@gmail.com',
@@ -57,7 +57,7 @@ app.get('/post_register',function(req,res){
 		console.log('Email sent: ' + info.response);
 	  }
 	});
-	res.status(200).send("Registration Successful");
+	res.status(200).send("Registration Successful");*/
 	
      //console.log(response);
 });
