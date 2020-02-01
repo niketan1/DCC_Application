@@ -1,0 +1,21 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "first web app for students",
+  "main": "create_db.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sqlite3": "^4.1.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server2.js"
+  },
+  "keywords": [],
+  "author": "K L Vijeth",
+  "license": "ISC",
+  "engines": {
+    "node": "8.10"
+  }
+}

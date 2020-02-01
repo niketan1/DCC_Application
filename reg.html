@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+  </head>
+  <body>
+    <form method="GET" action="http://127.0.0.1:3000/post_register">
+      <div class="container">
+        <link rel="stylesheet" type="text/css" href="abc.css" />
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr />
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" required />
+
+        <label for="usn"><b>USN</b></label>
+        <input type="text" placeholder="Enter USN" name="usn" required />
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required />
+
+        <label for="gen"><b>Gender</b></label
+        ><br /><br />
+        <select name="gender" id="deptselector2">
+          Gender
+          <option value="m">Male</option>
+          <option value="f">Female</option>
+        </select>
+        <br /><br />
+
+        <label for="dept"><b>School of</b></label
+        ><br /><br />
+        <select name="dept" id="deptselector">
+          Department
+          <option value="cs">Computer Science and Engineering</option>
+          <option value="ec">Electronics and Communication Engineering</option>
+          <option value="mech" selected>Mechanical Engineering</option>
+          <option value="ar">Automation And Robotics Engineering</option>
+          <option value="civil">Civil Engineering</option>
+        </select>
+        <br /><br />
+
+        <label for="Sem"><b>Semester</b></label
+        ><br /><br />
+        <select name="sem" id="deptselector1">
+          Sem
+          <option value="1"> 1</option>
+          <option value="2"> 2</option>
+          <option value="3"> 3</option>
+          <option value="4"> 4</option>
+          <option value="5"> 5</option>
+          <option value="6"> 6</option>
+          <option value="7"> 7</option>
+          <option value="8"> 8</option>
+        </select>
+        <br /><br />
+
+        <hr />
+
+        <button type="submit" class="registerbtn">Register</button>
+      </div>
+    </form>
+  </body>
+</html>
