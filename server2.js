@@ -62,7 +62,7 @@ app.get('/post_register',function(req,res){
      //console.log(response);
 });
 
-var server     =    app.listen(process.env.PORT,function(){
+server.listen(process.env.PORT,function(){
     console.log("We have started our server on port 3000");
 	//res.sendFile(__dirname+"/"+"home.html")
 	//app.get('/', (req, res) => res.render('home.html'))
