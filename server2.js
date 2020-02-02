@@ -34,17 +34,17 @@ app.get('/post_register',function(req,res){
 	});
 	
 	var transporter = nodemailer.createTransport({
-	  service: 'gmail',
+	  service: 'yahoo',
 	  auth: {
-		user: 'klvijeth1999@gmail.com',
-		pass: 'vimala@20091999'
+		user: 'klvijeth@yahoo.com',
+		pass: 'qeokfmvgkeocapeb'
 	  }
 	});
 
 
 
 	var mailOptions = {
-	  from: 'klvijeth1999@gmail.com',
+	  from: 'klvijeth@yahoo.com',
 	  to: req.query.email,
 	  subject: 'Registration',
 	  text: 'you have successfullly registered\nstay tuned for updates'
