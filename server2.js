@@ -10,10 +10,9 @@ app.use(express.static('static'));
 app.use(express.json());
 
 
-/*app.get('/',function(req,res){
+app.get('/',function(req,res){
     res.sendFile(__dirname+"/"+"home.html")
 });
-*/
 app.get('/register',function(req,res){
     console.log("register page");
     res.sendFile(__dirname+"/"+"reg.html");
@@ -62,8 +61,8 @@ app.get('/post_register',function(req,res){
      //console.log(response);
 });
 
-var server     =    app.listen(process.env.port,function(){
+var server     =    app.listen(process.env.PORT,function(){
     console.log("We have started our server on port 3000");
 	//res.sendFile(__dirname+"/"+"home.html")
-	app.get('/', (req, res) => res.render('home.html'))
+	//app.get('/', (req, res) => res.render('home.html'))
 });
