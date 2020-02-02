@@ -6,7 +6,7 @@ const fs = require('fs');
 var nodemailer = require('nodemailer');
 let db = new sqlite3.Database('studentdb');
 var http=require('http');
-var server = http.server(app);
+var server = http.Server(app);
 app.use(express.static('static'));
 app.use(express.json());
 
