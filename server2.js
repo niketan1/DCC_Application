@@ -43,7 +43,7 @@ app.get('/post_register',function(req,res){
 
 
 
-	/*var mailOptions = {
+	var mailOptions = {
 	  from: 'klvijeth1999@gmail.com',
 	  to: req.query.email,
 	  subject: 'Registration',
@@ -56,7 +56,7 @@ app.get('/post_register',function(req,res){
 	  } else {
 		console.log('Email sent: ' + info.response);
 	  }
-	});*/
+	});
 	res.status(200).send("Registration Successful");
 	
      //console.log(response);
