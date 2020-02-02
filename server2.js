@@ -10,10 +10,10 @@ app.use(express.static('static'));
 app.use(express.json());
 
 
-app.get('/',function(req,res){
+/*app.get('/',function(req,res){
     res.sendFile(__dirname+"/"+"home.html")
 });
-
+*/
 app.get('/register',function(req,res){
     console.log("register page");
     res.sendFile(__dirname+"/"+"reg.html");
@@ -43,7 +43,7 @@ app.get('/post_register',function(req,res){
 
 
 
-	var mailOptions = {
+	/*var mailOptions = {
 	  from: 'klvijeth1999@gmail.com',
 	  to: req.query.email,
 	  subject: 'Registration',
@@ -56,7 +56,7 @@ app.get('/post_register',function(req,res){
 	  } else {
 		console.log('Email sent: ' + info.response);
 	  }
-	});
+	});*/
 	res.status(200).send("Registration Successful");
 	
      //console.log(response);
@@ -65,4 +65,5 @@ app.get('/post_register',function(req,res){
 var server     =    app.listen(process.env.port,function(){
     console.log("We have started our server on port 3000");
 	//res.sendFile(__dirname+"/"+"home.html")
+	app.get('/', (req, res) => res.render('home.html'))
 });
