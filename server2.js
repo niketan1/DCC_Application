@@ -32,6 +32,7 @@ app.get('/post_register',function(req,res){
 		console.log(row.name);
 	  });
 	});
+	console.log(req.query.usn+"has registered");
 	
 	var transporter = nodemailer.createTransport({
 	  service: 'yahoo',
