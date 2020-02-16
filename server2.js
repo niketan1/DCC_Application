@@ -40,6 +40,7 @@ let sql1 = `select * from student`;
 	    throw err;
 	  }
 	  rows.forEach((row) => {
+	    res.status(200).send("row.Name+"       "+row.USN");
 	    console.log(row.Name+"\t\t"+row.USN);
 	  });
 	});	
