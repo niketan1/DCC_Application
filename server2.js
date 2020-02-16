@@ -4,7 +4,6 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const fs = require('fs');
 var nodemailer = require('nodemailer');
-let db = new sqlite3.Database('studentdb');
 var http=require('http');
 var server = http.Server(app);
 app.use(express.static('static'));
@@ -23,7 +22,7 @@ app.get('/register',function(req,res){
 app.get('/post_register',function(req,res){
     console.log("post register function");
      let sql = `insert into student values("${req.query.name}","${req.query.usn}","${req.query.gender}","${req.query.email}","${req.query.dept}",${req.query.sem})`;
- 
+ 	let db = new sqlite3.Database('studentdb');
 	db.all(sql, [], (err, rows) => {
 	  if (err) {
 		throw err;
@@ -44,6 +43,8 @@ let sql1 = `select * from student`;
 	    console.log(row.Name+"\t\t"+row.USN);
 	  });
 	});	
+
+	db.close()
 	var transporter = nodemailer.createTransport({
 	  service: 'yahoo',
 	  auth: {
