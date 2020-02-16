@@ -33,8 +33,6 @@ app.get('/post_register',function(req,res){
 	  });
 	});
 	console.log(req.query.usn+"has registered");
-	
-	let db = new sqlite3.Database('studentdb');
  
 let sql1 = `select * from student`;
  
