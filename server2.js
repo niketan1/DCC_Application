@@ -34,6 +34,19 @@ app.get('/post_register',function(req,res){
 	});
 	console.log(req.query.usn+"has registered");
 	
+	let db = new sqlite3.Database('studentdb');
+ 
+let sql1 = `select * from student`;
+ 
+	db.all(sql1, [], (err, rows) => {
+	  if (err) {
+	    throw err;
+	  }
+	  rows.forEach((row) => {
+	    console.log(row.Name+"\t\t"+row.USN);
+	  });
+	});	
+	db.close();
 	var transporter = nodemailer.createTransport({
 	  service: 'yahoo',
 	  auth: {
