@@ -43,7 +43,6 @@ let sql1 = `select * from student`;
 	    console.log(row.Name+"\t\t"+row.USN);
 	  });
 	});	
-
 	db.close()
 	var transporter = nodemailer.createTransport({
 	  service: 'yahoo',
