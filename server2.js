@@ -102,13 +102,13 @@ app.get('/post_delete',function(req,res){
     let db = new sqlite3.Database('studentdb');
     let sql2 = `delete from student where USN="${req.query.usn}"`;
 let db = new sqlite3.Database('studentdb');
-	db.all(sql2, [], (err, rows) => {
-	  if (err) {
-		throw err;
-	  }
-	  });
-	});
-	db.close();
+db.run(`DELETE FROM student WHERE USN="${req.query.usn}"`, id, function(err) {
+  if (err) {
+    return console.error(err.message);
+  }
+  console.log(`Row(s) deleted ${this.changes}`);
+});
+db.close();
 console.log("USN "+req.query.usn+" Deleted")
 res.status(200).send("USN "+req.query.usn+" Deleted");
 });
