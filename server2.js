@@ -99,7 +99,6 @@ app.get('/delete',function(req,res){
 });
 app.get('/post_delete',function(req,res){
     console.log("delete student");
-db.close();
 console.log("USN "+req.query.usn+" Deleted")
 res.status(200).send("USN "+req.query.usn+" Deleted");
 });
