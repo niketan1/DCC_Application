@@ -99,7 +99,20 @@ app.get('/delete',function(req,res){
 });
 app.get('/post_delete',function(req,res){
     console.log("delete student");
-console.log("USN "+req.query.usn+"Deleted")
+    let db = new sqlite3.Database('studentdb');
+    let sql = `delete from student where USN="${req.query.usn}"`;
+let db = new sqlite3.Database('studentdb');
+	db.all(sql, [], (err, rows) => {
+	  if (err) {
+		throw err;
+	  }
+	  rows.forEach((row) => {
+		console.log(row.name);
+	  });
+	});
+	db.close();
+console.log("USN "+req.query.usn+" Deleted")
+res.status(200).send("USN "+req.query.usn+" Deleted");
 });
 server.listen(process.env.PORT,function(){
     console.log("We have started our server on port 3000");
