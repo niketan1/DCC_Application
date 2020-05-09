@@ -97,7 +97,10 @@ app.get('/delete',function(req,res){
     res.sendFile(__dirname+"/"+"delete.html");
     
 });
-
+app.get('/post_delete',function(req,res){
+    console.log("delete student");
+console.log("USN "+req.query.usn+"Deleted")
+});
 server.listen(process.env.PORT,function(){
     console.log("We have started our server on port 3000");
 	//res.sendFile(__dirname+"/"+"home.html")
