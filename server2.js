@@ -92,6 +92,12 @@ app.get('/view',function(req,res){
 	
      //console.log(response);
 });
+app.get('/delete',function(req,res){
+    console.log("delete page");
+    res.sendFile(__dirname+"/"+"delete.html");
+    
+});
+
 server.listen(process.env.PORT,function(){
     console.log("We have started our server on port 3000");
 	//res.sendFile(__dirname+"/"+"home.html")
