@@ -32,6 +32,7 @@ app.get('/post_register',function(req,res){
 	  });
 	});
 	console.log(req.query.usn+"has registered");
+	
  
 let sql1 = `select * from student`;
  
@@ -52,8 +53,6 @@ let sql1 = `select * from student`;
 	  }
 	});
 
-
-
 	var mailOptions = {
 	  from: 'klvijeth@yahoo.com',
 	  to: req.query.email,
@@ -73,8 +72,30 @@ let sql1 = `select * from student`;
      //console.log(response);
 });
 
+app.get('/view',function(req,res){
+    let db = new sqlite3.Database('studentdb');
+     let sql1 = `select * from student`;
+ 
+	db.all(sql1, [], (err, rows) => {
+	  if (err) {
+	    throw err;
+	  }
+	  rows.forEach((row) => {
+	    console.log(row.Name+"\t\t"+row.USN+"\t\t"+row.school);
+	    
+	  });
+	  res.send(rows)
+	});	
+	db.close();
+	//res.status(200).send("display Successful");
+
+	
+     //console.log(response);
+});
 server.listen(process.env.PORT,function(){
     console.log("We have started our server on port 3000");
 	//res.sendFile(__dirname+"/"+"home.html")
 	//app.get('/', (req, res) => res.render('home.html'))
 });
+
+
