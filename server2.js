@@ -97,23 +97,7 @@ app.get('/delete',function(req,res){
     res.sendFile(__dirname+"/"+"delete.html");
     
 });
-app.get('/post_delete',function(req,res){
-    console.log("delete student");
-    let db = new sqlite3.Database('studentdb');
-    let sql = `delete from student
-where usn="${req.query.usn}"`;
-let db = new sqlite3.Database('studentdb');
-	db.all(sql, [], (err, rows) => {
-	  if (err) {
-		throw err;
-	  }
-	  rows.forEach((row) => {
-		console.log(row.name);
-	  });
-	});
-	db.close();
-console.log("USN "+req.query.usn+"Deleted")
-});
+
 server.listen(process.env.PORT,function(){
     console.log("We have started our server on port 3000");
 	//res.sendFile(__dirname+"/"+"home.html")
