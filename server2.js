@@ -19,6 +19,53 @@ app.get('/register',function(req,res){
     
 });
 
+app.get('/delete',function(req,res){
+    console.log("delete page");
+    res.sendFile(__dirname+"/"+"delete.html");
+    
+});
+
+
+app.get('/view',function(req,res){
+    let db = new sqlite3.Database('studentdb');
+     let sql1 = `select * from student`;
+ 
+	db.all(sql1, [], (err, rows) => {
+	  if (err) {
+	    throw err;
+	  }
+	  rows.forEach((row) => {
+	    console.log(row.Name+"\t\t"+row.USN+"\t\t"+row.school);
+	    
+	  });
+	  res.send(rows)
+	});	
+	db.close();
+	//res.status(200).send("display Successful");
+
+	
+     //console.log(response);
+});
+
+
+app.get('/post_delete',function(req,res){
+    console.log("delete student");
+    let db = new sqlite3.Database('studentdb');
+    let sql = `delete from student
+where usn="${req.query.usn}"`;
+let db = new sqlite3.Database('studentdb');
+	db.all(sql, [], (err, rows) => {
+	  if (err) {
+		throw err;
+	  }
+	  rows.forEach((row) => {
+		console.log(row.name);
+	  });
+	});
+	db.close();
+console.log("USN "+req.query.usn+"Deleted")
+});
+
 app.get('/post_register',function(req,res){
     console.log("post register function");
      let sql = `insert into student values("${req.query.name}","${req.query.usn}","${req.query.gender}","${req.query.email}","${req.query.dept}",${req.query.sem})`;
@@ -43,7 +90,7 @@ let sql1 = `select * from student`;
 	    console.log(row.Name+"\t\t"+row.USN);
 	  });
 	});	
-	db.close()
+	db.close();
 	var transporter = nodemailer.createTransport({
 	  service: 'yahoo',
 	  auth: {

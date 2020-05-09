@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Delete</title>
+    <script>
+        document.getElementById("deletecomp").action=document.domain+"/post_delete";
+        </script>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="abc.css" />
+    <form id = "deletecomp" method="GET" action="/post_delete">
+    <h2>Enter the USN </h2>
+    <input type="text"  name="usn"><br>
+    <centre>
+            <button class="button">Delete</button>
+    </centre>
+</form>
+    
+</body>
+</html>

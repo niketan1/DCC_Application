@@ -30,7 +30,7 @@ hr {
 /* Set a style for the submit/register button */
 .registerbtn {
   font:Times New Roman;
-  background-color: #4CAF50;
+  background-color: dodgerblue;
   color: white;
   padding: 16px 20px;
   margin: 8px 0;
@@ -64,4 +64,15 @@ a {
 .signin {
   background-color: #f1f1f1;
   text-align: center;
+}
+
+.button {
+  background-color : dodgerblue; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
