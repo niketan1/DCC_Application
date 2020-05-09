@@ -99,7 +99,7 @@ app.get('/delete',function(req,res){
 });
 app.get('/post_delete',function(req,res){
     console.log("delete student");
-    let db = new sqlite3.Database('studentdb');
+    /*let db = new sqlite3.Database('studentdb');
     let sql = `delete from student where USN="${req.query.usn}"`;
 let db = new sqlite3.Database('studentdb');
 	db.all(sql, [], (err, rows) => {
@@ -110,7 +110,7 @@ let db = new sqlite3.Database('studentdb');
 		console.log(row.name);
 	  });
 	});
-	db.close();
+	db.close();*/
 console.log("USN "+req.query.usn+" Deleted")
 res.status(200).send("USN "+req.query.usn+" Deleted");
 });
