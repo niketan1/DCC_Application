@@ -4,7 +4,8 @@ const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 const fs = require("fs");
 var nodemailer = require("nodemailer");
-//var http=require('http');
+var http=require('http');
+var server = http.Server(app);
 app.use(express.static("static"));
 app.use(express.json());
 
@@ -112,5 +113,9 @@ app.get("/post_delete", function (req, res) {
 // 	//app.get('/', (req, res) => res.render('home.html'))
 // });
 
-app.listen(3000);
+ app.listen(process.env.PORT,function(){
+     console.log("We have started our server on port 3000");
+ 	//res.sendFile(__dirname+"/"+"home.html")
+ 	//app.get('/', (req, res) => res.render('home.html'))
+ });
 
