@@ -45,13 +45,13 @@ app.get("/post_register", function (req, res) {
   var transporter = nodemailer.createTransport({
     service: "yahoo",
     auth: {
-      user: "klvijeth@yahoo.com",
-      pass: "qeokfmvgkeocapeb",
+      user: "niket247@yahoo.com",
+      pass: "bgbotxaimqmufgmi",
     },
   });
 
   var mailOptions = {
-    from: "klvijeth@yahoo.com",
+    from: "niket247@yahoo.com",
     to: req.query.email,
     subject: "Registration",
     text: "you have successfullly registered\nstay tuned for updates",
@@ -113,7 +113,7 @@ app.get("/post_delete", function (req, res) {
 // 	//app.get('/', (req, res) => res.render('home.html'))
 // });
 
- app.listen(process.env.PORT,function(){
+ app.listen(3000,function(){
      console.log("We have started our server on port 3000");
  	//res.sendFile(__dirname+"/"+"home.html")
  	//app.get('/', (req, res) => res.render('home.html'))
